@@ -1,0 +1,13 @@
+springboot整合web基础组件(servlet,filter,listener)
+    1.servlet
+        创建类,继承HttpServlet,重写doGet(),doPost()方法
+        在类上添加@WebServlet(urlPatterns = "/get")注解,urlPatterns指请求路径('/' 一定要加)
+    2.filter
+        创建类,实现Filter(在servlet包下的filter),实现方法
+        在类上添加@WebFilter注解
+    3.listener
+        创建类, ServletRequestListener,实现方法
+        在类上添加@WebListener注解
+
+最后在启动类上添加@ServletComponentScan(basePackages = "扫描的包")
+这个注解可以扫描servlet,filter,listener,加上这个注解后这些servlet,filter,listener才会生效
